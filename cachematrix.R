@@ -2,6 +2,7 @@
 ## functions do
 
 ## Write a short comment describing this function
+setwd("~/code/ProgrammingAssignment2")
 
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
