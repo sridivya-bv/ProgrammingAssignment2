@@ -3,8 +3,9 @@
 
 setwd("~/code/ProgrammingAssignment2")
 
-## Creating a matrix object that can cache its inverse
-## The function stores the matrix and caches its inverse
+
+## The function creates a matrix object, and an inverse which is initially 
+## set to null. It has four functions to get and set the matrix, as well get and ## set the inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
@@ -21,18 +22,21 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this functio
+## The function calculates the inverse of the matrix. It first checks to see
+## if the inverse already has been calculated, if yes, it gets the inverse from
+## the cache, if no, it calculates the inverse, and sets the inverse value in the 
+## cache and returns the inverse
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
-  m <- x$getmean()
+  m <- x$getinverse()
   if(!is.null(m)) {
     message("getting cached data")
     return(m)
   }
   data <- x$get()
-  m <- mean(data, ...)
-  x$setmean(m)
+  m <- solve(data, ...)
+  x$setinverse(m)
   m
   
 }
